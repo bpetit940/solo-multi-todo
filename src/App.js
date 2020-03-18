@@ -22,8 +22,25 @@ class App extends React.Component {
     });
   };
 
-  handleDeleteFactory = name => {
-    return () => this.handleDelete(name);
+  handleUpdate = (index, newName) => {
+    const newState = [...this.state.items];
+    newState[index].name = newName;
+
+    this.setState({
+      items: newState
+    });
+  };
+
+  handleChecked = name => {
+    let itemIndex = this.state.items.findIndex(item => item.name === name);
+    const newItems = [...this.state.items];
+    // Object.is(newItems[0], this.state.items[0])
+    const currentItem = newItems[itemIndex];
+    currentItem.checked = !currentItem.checked;
+    newItems[itemIndex] = currentItem;
+    this.setState({
+      items: newItems
+    });
   };
 
   render() {
@@ -47,7 +64,9 @@ class App extends React.Component {
         </header>
         <List
           items={this.state.items}
-          handleDeleteFactory={this.handleDeleteFactory}
+          handleDelete={this.handleDelete}
+          handleUpdate={this.handleUpdate}
+          handleClick={this.handleChecked}
         />
       </main>
     );
