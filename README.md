@@ -1,3 +1,18 @@
+Mutli Todo User Stories:
+
+- User will be provided a selection of different Todo's made with different frameworks
+  - clicking on a link button will guide the user to the specific framework todo they have chosen
+
+1. React Todo:
+   - User can add new to-do's
+     - new todo field should clear
+     - hitting enter on an empty todo field should not create an empty todo
+   - clicking the delete button on a todo list item deletes the list item
+   - clicking the done button will strikethrough a todo items name
+     -clicking the done button will disable the ability to change the todo item's name
+   - changing the name of the todo item will update it's name
+     -
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
