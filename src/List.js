@@ -10,12 +10,16 @@ const functionComponent = props => (
             <input
               type="text"
               name="itemUpdater"
-              className="itemUpdater"
+              className={
+                item.checked
+                  ? "itemUpdater itemUpdater--checked"
+                  : "itemUpdater"
+              }
               value={item.name}
               onChange={e => props.handleUpdate(index, e.target.value)}
             ></input>
           </form>
-          <button onClick={() => props.handleClick(item.name)}>done</button>
+          <button onClick={() => props.handleChecked(index)}>done</button>
           <button onClick={() => props.handleDelete(item.name)}>delete</button>
         </section>
       );
@@ -25,7 +29,23 @@ const functionComponent = props => (
 
 export default functionComponent;
 
-// Product Requirements:
-// User can add new to-do's
-//   - new todo field should clear
-//   - hitting enter on an empty todo field should not create an empty todo
+// Model, View, Controller (MVC)
+
+// 1. Model: store and update state
+// 2. Controller: respond to user input
+// 3. View: show correct representation of state on screen
+
+// Model:
+// Some object or set of objects that:
+// store state
+// maybe offers functions to update state in different scenarios
+
+// Controller:
+// Event handling
+// Interpreting user actions and routing them to the model
+// Send commands to View to update when Model changes
+
+// View:
+// Send messages to Controller in response to user actions
+// Make sure that commands from Controller cause the DOM
+// to be updated

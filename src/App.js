@@ -31,13 +31,12 @@ class App extends React.Component {
     });
   };
 
-  handleChecked = name => {
-    let itemIndex = this.state.items.findIndex(item => item.name === name);
+  handleChecked = index => {
     const newItems = [...this.state.items];
     // Object.is(newItems[0], this.state.items[0])
-    const currentItem = newItems[itemIndex];
+    const currentItem = newItems[index];
     currentItem.checked = !currentItem.checked;
-    newItems[itemIndex] = currentItem;
+    newItems[index] = currentItem;
     this.setState({
       items: newItems
     });
@@ -66,7 +65,7 @@ class App extends React.Component {
           items={this.state.items}
           handleDelete={this.handleDelete}
           handleUpdate={this.handleUpdate}
-          handleClick={this.handleChecked}
+          handleChecked={this.handleChecked}
         />
       </main>
     );

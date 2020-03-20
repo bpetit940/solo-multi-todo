@@ -11,7 +11,6 @@ Mutli Todo User Stories:
    - clicking the done button will strikethrough a todo items name
      -clicking the done button will disable the ability to change the todo item's name
    - changing the name of the todo item will update it's name
-     -
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
